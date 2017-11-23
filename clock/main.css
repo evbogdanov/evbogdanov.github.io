@@ -1,0 +1,77 @@
+#clock {
+  width: 400px;
+  height: 400px;
+  background: #eee;
+  border-radius: 100%;
+  position: relative;
+}
+
+.clock-layer {
+  width: 400px;
+  height: 400px;
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.clock-layer i {
+  display: block;
+  position: absolute;
+}
+
+.clock-layer.dot i {
+  left: 198px;
+  top: 10px;
+  width: 4px;
+  height: 4px;
+  background: #aaa;
+  border-radius: 100%;
+}
+
+.clock-layer.center-hours-minutes {
+  left: 192px;
+  top: 192px;
+  width: 16px;
+  height: 16px;
+  background: #aaa;
+  border-radius: 100%;
+}
+
+.clock-layer.center-seconds {
+  left: 196px;
+  top: 196px;
+  width: 8px;
+  height: 8px;
+  background: red;
+  border-radius: 100%;
+}
+
+.clock-layer.seconds i {
+  left: 199px;
+  top: 25px;
+  width: 2px;
+  height: 175px;
+  background: red;
+}
+
+.clock-layer.minutes i {
+  left: 196px;
+  top: 25px;
+  width: 8px;
+  height: 175px;
+  background: #aaa;
+}
+
+.clock-layer.hours i {
+  left: 196px;
+  top: 100px;
+  width: 8px;
+  height: 100px;
+  background: #aaa;
+}
+
+.seconds, .minutes, .hours {
+  transition-duration: .1s;
+  transition-timing-function: cubic-bezier(.42,1.06,.71,1.5);
+}
