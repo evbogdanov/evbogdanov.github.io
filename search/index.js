@@ -54,6 +54,7 @@ function main() {
       elSearch.value = ''
       elLink.innerText = ''
       elDismiss.style.display = 'none'
+      elSearch.focus()
     })
   })
 }
