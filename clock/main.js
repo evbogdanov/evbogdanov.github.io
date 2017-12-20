@@ -1,34 +1,98 @@
-// TODO: fix animation when tab is inactive
-// https://stackoverflow.com/questions/5927284/how-can-i-make-setinterval-also-work-when-a-tab-is-inactive-in-chrome
+/*******************************************************************************
+ *** State
+ ******************************************************************************/
 
-const els = {seconds: null, minutes: null, hours: null},
-      degs = {seconds: null, minutes: null, hours: null}
+const state = {
+  elHours:   null,
+  elMinutes: null,
+  elSeconds: null,
 
-function render() {
-  if (degs.seconds === null) {
-    const now = new Date(),
-          seconds = now.getSeconds(),
-          minutes = now.getMinutes(),
-          hours = now.getHours()
-    degs.seconds = seconds * 360 / 60
-    degs.minutes = (minutes * 360 / 60) + (seconds * 360 / 60 / 60)
-    degs.hours = (hours * 360 / 12) + (minutes * 360 / 12 / 60)
-  }
-  else {
-    degs.seconds += 360 / 60
-    degs.minutes += 360 / 60 / 60
-    degs.hours += 360 / 12 / 3600
-  }
-  els.seconds.style.transform = `rotate(${degs.seconds}deg)`
-  els.minutes.style.transform = `rotate(${degs.minutes}deg)`
-  els.hours.style.transform = `rotate(${degs.hours}deg)`
+  initialUnixtime:   null,
+  initialDegHours:   null,
+  initialDegMinutes: null,
+  initialDegSeconds: null,
+
+  degHours:   null,
+  degMinutes: null,
+  degSeconds: null,
+
+  diff: 0
 }
 
+
+/*******************************************************************************
+ *** Update state
+ ******************************************************************************/
+
+function setInitialState(now) {
+  const unixtime = now.getTime(),
+        seconds  = now.getSeconds(),
+        minutes  = now.getMinutes(),
+        hours    = now.getHours()
+
+  state.initialUnixtime = unixtime
+  state.degHours        = state.initialDegHours   = (hours * 360 / 12) +
+                                                    (minutes * 360 / 12 / 60)
+  state.degMinutes      = state.initialDegMinutes = (minutes * 360 / 60) +
+                                                    (seconds * 360 / 60 / 60)
+  state.degSeconds      = state.initialDegSeconds = seconds * 360 / 60
+}
+
+function updateState(now) {
+  const unixtime = now.getTime(),
+        diff     = Math.round((unixtime - state.initialUnixtime) / 1000)
+  
+  if (diff === state.diff)
+    return false
+
+  state.diff       = diff
+  state.degHours   = state.initialDegHours + (360 / 12 / 3600) * diff
+  state.degMinutes = state.initialDegMinutes + (360 / 60 / 60) * diff
+  state.degSeconds = state.initialDegSeconds + (360 / 60) * diff
+
+  return true
+}
+
+
+/*******************************************************************************
+ *** Update UI
+ ******************************************************************************/
+
+function render() {
+  state.elHours.style.transform   = `rotate(${state.degHours}deg)`
+  state.elMinutes.style.transform = `rotate(${state.degMinutes}deg)`
+  state.elSeconds.style.transform = `rotate(${state.degSeconds}deg)`
+}
+
+
+/*******************************************************************************
+ *** Tick
+ ******************************************************************************/
+
+function tick() {
+  let now          = new Date(),
+      shouldRender = true
+
+  if (state.initialUnixtime === null)
+    setInitialState(now)
+  else
+    shouldRender = updateState(now)
+
+  if (shouldRender)
+    render()
+}
+
+
+/*******************************************************************************
+ *** Let's go
+ ******************************************************************************/
+
 function main() {
-  els.seconds = document.querySelector('.seconds')
-  els.minutes = document.querySelector('.minutes')
-  els.hours = document.querySelector('.hours')
-  setInterval(render, 1000)
+  state.elHours   = document.querySelector('.hours')
+  state.elMinutes = document.querySelector('.minutes')
+  state.elSeconds = document.querySelector('.seconds')
+  
+  setInterval(tick, 200)
 }
 
 document.addEventListener('DOMContentLoaded', main)
