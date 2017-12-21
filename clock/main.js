@@ -88,9 +88,9 @@ function tick() {
  ******************************************************************************/
 
 function main() {
-  state.elHours   = document.querySelector('.hours')
-  state.elMinutes = document.querySelector('.minutes')
-  state.elSeconds = document.querySelector('.seconds')
+  state.elHours   = document.querySelector('.clock__layer_hours')
+  state.elMinutes = document.querySelector('.clock__layer_minutes')
+  state.elSeconds = document.querySelector('.clock__layer_seconds')
   
   setInterval(tick, 200)
 }

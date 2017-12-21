@@ -1,8 +1,17 @@
+/*******************************************************************************
+ *** Reset
+ ******************************************************************************/
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+
+/*******************************************************************************
+ *** Clock
+ ******************************************************************************/
 
 .clock {
   width: 50vmin;
@@ -15,7 +24,12 @@
   transform: translate(-50%, -50%);
 }
 
-.clock-layer {
+
+/*******************************************************************************
+ *** Clock layer
+ ******************************************************************************/
+
+.clock__layer {
   width: 100%;
   height: 100%;
   border-radius: 100%;
@@ -24,69 +38,73 @@
   left: 0;
 }
 
-.clock-layer i {
-  display: block;
-  position: absolute;
-}
-
-.clock-layer.dot i {
-  left: 50%;
-  top: 5%;
-  width: 4px;
-  height: 4px;
-  background: #aaa;
-  border-radius: 100%;
-  transform: translate(-2px, -2px);
-}
-
-.clock-layer.center-hours-minutes {
-  left: 50%;
-  top: 50%;
-  width: 16px;
-  height: 16px;
-  background: #aaa;
-  border-radius: 100%;
-  transform: translate(-8px, -8px);
-}
-
-.clock-layer.center-seconds {
-  left: 50%;
-  top: 50%;
-  width: 8px;
-  height: 8px;
-  background: red;
-  border-radius: 100%;
-  transform: translate(-4px, -4px);
-}
-
-.clock-layer.seconds i {
-  left: 50%;
-  top: 10%;
-  width: 2px;
-  height: 40%;
-  background: red;
-  transform: translate(-1px);
-}
-
-.clock-layer.minutes i {
-  left: 50%;
-  top: 10%;
-  width: 8px;
-  height: 40%;
-  background: #aaa;
-  transform: translate(-4px);
-}
-
-.clock-layer.hours i {
-  left: 50%;
-  top: 25%;
-  width: 8px;
-  height: 25%;
-  background: #aaa;
-  transform: translate(-4px);
-}
-
-.seconds {
+.clock__layer_seconds {
   transition-duration: .1s;
   transition-timing-function: cubic-bezier(.42,1.06,.71,1.5);
+}
+
+
+/*******************************************************************************
+ *** Clock dot
+ ******************************************************************************/
+
+.clock__dot {
+  position: absolute;
+  left: 50%;
+  top: 5%;
+  width: 1%;
+  height: 1%;
+  background: #aaa;
+  border-radius: 100%;
+  transform: translate(-50%, -50%);
+}
+
+
+/*******************************************************************************
+ *** Clock center
+ ******************************************************************************/
+
+.clock__center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.clock__center_hours-minutes {
+  width: 7%;
+  height: 7%;
+  background: #aaa;
+}
+
+.clock__center_seconds {
+  width: 3%;
+  height: 3%;
+  background: red;
+}
+
+
+/*******************************************************************************
+ *** Clock hand
+ ******************************************************************************/
+
+.clock__hand {
+  position: absolute;
+  width: 3%;
+  height: 40%;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%);
+  background: #aaa;
+}
+
+.clock__hand_hours {
+  height: 25%;
+  top: 25%;
+}
+
+.clock__hand_seconds {
+  width: 1%;
+  background: red;
 }
