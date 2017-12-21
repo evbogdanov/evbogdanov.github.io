@@ -38,6 +38,19 @@
   left: 0;
 }
 
+.clock__layer_12 { transform: rotate(0deg);   }
+.clock__layer_1  { transform: rotate(30deg);  }
+.clock__layer_2  { transform: rotate(60deg);  }
+.clock__layer_3  { transform: rotate(90deg);  }
+.clock__layer_4  { transform: rotate(120deg); }
+.clock__layer_5  { transform: rotate(150deg); }
+.clock__layer_6  { transform: rotate(180deg); }
+.clock__layer_7  { transform: rotate(210deg); }
+.clock__layer_8  { transform: rotate(240deg); }
+.clock__layer_9  { transform: rotate(270deg); }
+.clock__layer_10 { transform: rotate(300deg); }
+.clock__layer_11 { transform: rotate(330deg); }
+
 .clock__layer_seconds {
   transition-duration: .1s;
   transition-timing-function: cubic-bezier(.42,1.06,.71,1.5);
