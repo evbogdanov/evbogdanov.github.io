@@ -38,7 +38,6 @@
   left: 0;
 }
 
-.clock__layer_12 { transform: rotate(0deg);   }
 .clock__layer_1  { transform: rotate(30deg);  }
 .clock__layer_2  { transform: rotate(60deg);  }
 .clock__layer_3  { transform: rotate(90deg);  }
