@@ -70,8 +70,8 @@ function render() {
  ******************************************************************************/
 
 function tick() {
-  let now          = new Date(),
-      shouldRender = true
+  const now        = new Date()
+  let shouldRender = true
 
   if (state.initialUnixtime === null)
     setInitialState(now)
