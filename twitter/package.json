@@ -1,0 +1,26 @@
+{
+  "name": "twitter",
+  "version": "1.0.0",
+  "description": "Turn https://dribbble.com/shots/1546643 into functioning user interface",
+  "main": "index.js",
+  "scripts": {
+    "live-server": "live-server",
+    "css:watch": "node-sass scss/main.scss css/style.css -w",
+    "start": "npm-run-all --parallel live-server css:watch",
+    "css:compile": "node-sass scss/main.scss css/style.comp.css",
+    "css:prefix": "postcss --use autoprefixer -b 'last 5 versions' css/style.comp.css -o css/style.prefix.css",
+    "css:compress": "node-sass css/style.prefix.css css/style.css --output-style compressed",
+    "css:clean": "rm css/style.comp.css css/style.prefix.css",
+    "css:build": "npm-run-all css:compile css:prefix css:compress css:clean"
+  },
+  "author": "Ev Bogdanov <evbogdanov.com@gmail.com>",
+  "repository": "git://github.com/evbogdanov/evbogdanov.github.io",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "autoprefixer": "^7.2.3",
+    "live-server": "^1.2.0",
+    "node-sass": "^4.7.2",
+    "npm-run-all": "^4.1.2",
+    "postcss-cli": "^4.1.1"
+  }
+}
