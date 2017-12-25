@@ -1,9 +1,8 @@
 .profile {
+  width: 100%;
   background: $color-blue;
-  height: 30rem;
 
   @include if-screen(medium) {
     width: 30rem;
-    float: left;
   }
 }

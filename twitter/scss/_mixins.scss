@@ -5,12 +5,7 @@
   @if $device == large {
     @media (min-width: 1200px) { @content; };
   }
-}
-
-@mixin clearfix {
-  &::after {
-    content: '';
-    clear: both;
-    display: table;
+  @if $device == extralarge {
+    @media (min-width: 1500px) { @content; };
   }
 }

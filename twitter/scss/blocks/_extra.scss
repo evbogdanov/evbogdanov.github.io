@@ -4,8 +4,6 @@
   @include if-screen(large) {
     display: block;
     width: 30rem;
-    height: 30rem;
-    float: left;
-    background: $color-white;;
+    background: $color-white;
   }
 }

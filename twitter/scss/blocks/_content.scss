@@ -1,3 +1,10 @@
 .content {
-  @include clearfix;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  @include if-screen(medium) {
+    flex-wrap: nowrap;
+    align-items: stretch;
+  }
 }
