@@ -1,0 +1,12 @@
+.main {
+  height: 30em;
+
+  @include if-screen(medium) {
+    float: left;
+    width: calc(100% - 30rem);
+  }
+
+  @include if-screen(large) {
+    width: calc(100% - 60rem);
+  }
+}

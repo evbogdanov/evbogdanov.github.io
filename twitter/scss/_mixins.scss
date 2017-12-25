@@ -1,0 +1,16 @@
+@mixin if-screen($device) {
+  @if $device == medium {
+    @media (min-width: 900px) { @content; };
+  }
+  @if $device == large {
+    @media (min-width: 1200px) { @content; };
+  }
+}
+
+@mixin clearfix {
+  &::after {
+    content: '';
+    clear: both;
+    display: table;
+  }
+}

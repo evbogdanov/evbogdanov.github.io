@@ -1,0 +1,9 @@
+.profile {
+  background: $color-blue;
+  height: 30rem;
+
+  @include if-screen(medium) {
+    width: 30rem;
+    float: left;
+  }
+}
