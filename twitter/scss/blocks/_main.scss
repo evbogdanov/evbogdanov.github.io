@@ -1,5 +1,5 @@
 .main {
-  height: 30em;
+  height: 30rem;
 
   @include if-screen(medium) {
     float: left;
