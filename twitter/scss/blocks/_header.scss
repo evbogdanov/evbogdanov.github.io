@@ -1,16 +1,12 @@
 .header {
-  height: 8rem;
+  height: 5rem;
   background: $color-white;
   position: relative;
+  display: flex;
+  justify-content: space-between;
 
-  &__logo {
-    width: 4rem;
-    height: 4rem;
-    border-radius: 100%;
-    background: $color-blue;
-    position: absolute;
-    top: 2rem;
-    left: 50%;
-    transform: translate(-50%);
+  @include if-screen(medium) {
+    height: 8rem;
+    box-shadow: 0 .1rem .3rem rgba(0, 0, 0, .1);
   }
 }

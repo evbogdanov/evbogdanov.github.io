@@ -1,0 +1,58 @@
+.nav-left {
+  flex: 0 0 80%;
+
+  @include if-screen(small) {
+    flex-basis: 30rem;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+  }
+
+  &__item {
+    flex: 0 0 25%;
+    height: 5rem;
+    display: flex;
+    
+    @include if-screen(medium) {
+      height: 8rem;
+
+      &:first-child {
+        border-right: .1rem solid $color-grey-light;
+      }
+    }
+  }
+
+  &__link {
+    width: 3rem;
+    height: 3rem;
+    margin: auto;
+    display: block;
+    border-radius: 100%;
+    border: .1rem solid $color-grey-medium;
+    background-size: cover;
+
+    @include if-screen(medium) {
+      width: 4rem;
+      height: 4rem;
+    }
+    
+    &_tweet {
+      border: none;
+      background-image: url(../img/tweet.png);
+    }
+
+    &_bell {
+      background-image: url(../img/bell.png);
+    }
+
+    &_msg {
+      background-image: url(../img/msg.png);
+    }
+
+    &_hash {
+      background-image: url(../img/hash.png);
+    }
+  }
+}

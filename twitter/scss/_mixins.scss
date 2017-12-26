@@ -1,4 +1,7 @@
 @mixin if-screen($device) {
+  @if $device == small {
+    @media (min-width: 700px) { @content; };
+  }
   @if $device == medium {
     @media (min-width: 900px) { @content; };
   }
