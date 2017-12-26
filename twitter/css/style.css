@@ -25,7 +25,7 @@ body {
       margin: 9.5rem auto; } }
 
 .header {
-  height: 6rem;
+  height: 6.4rem;
   background: #fffbf5;
   position: relative;
   display: flex;
@@ -76,7 +76,7 @@ body {
     display: flex; }
   .nav-left__item {
     flex: 0 0 25%;
-    height: 6rem;
+    height: 6.4rem;
     display: flex; }
     @media (min-width: 900px) {
       .nav-left__item {
@@ -134,30 +134,20 @@ body {
       .nav-right__search {
         display: block;
         width: 20rem;
-        height: 3rem;
+        height: 4rem;
+        border-radius: 4rem;
         border: 0.1rem solid #e3dfd8;
-        border-radius: 3rem;
         flex-grow: 1;
         position: relative; } }
-    @media (min-width: 900px) {
-      .nav-right__search {
-        height: 4rem;
-        border-radius: 4rem; } }
   .nav-right__search-icon {
-    width: 2.2rem;
-    height: 2.2rem;
+    width: 3rem;
+    height: 3rem;
     background-image: url(../img/search.png);
     background-size: cover;
     border-radius: 100%;
     position: absolute;
-    right: .4rem;
-    top: .3rem; }
-    @media (min-width: 900px) {
-      .nav-right__search-icon {
-        width: 3rem;
-        height: 3rem;
-        right: .5rem;
-        top: .5rem; } }
+    right: .5rem;
+    top: .5rem; }
   .nav-right__ava {
     display: block;
     width: 4rem;
