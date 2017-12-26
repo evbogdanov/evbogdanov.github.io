@@ -17,3 +17,7 @@ body {
   font-weight: 200;
   line-height: 1.45;
 }
+
+::-webkit-input-placeholder {
+  color: $color-grey-dark;
+}
