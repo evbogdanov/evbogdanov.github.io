@@ -12,3 +12,10 @@
     @media (min-width: 1500px) { @content; };
   }
 }
+
+@mixin h2 {
+  text-transform: uppercase;
+  font-weight: $font-weight-normal;
+  font-size: $font-size-normal;
+  letter-spacing: .1rem;
+}

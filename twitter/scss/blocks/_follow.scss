@@ -1,0 +1,68 @@
+.follow {
+  &__user {
+    height: 4rem;
+    padding: 0 2.5rem 0 6rem;
+    margin-top: 2rem;
+    position: relative;
+  }
+
+  &__link {
+    display: inline-block;
+    position: relative;
+    color: $color-black;
+
+    &:hover {
+      text-decoration: underline;
+      color: $color-blue;
+    }
+  }
+
+  &__img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 100%;
+    position: absolute;
+    left: -6rem;
+    top: 0;
+  }
+
+  &__bio {
+    color: $color-grey-dark;
+    display: block;
+  }
+
+  &__btn {
+    display: inline-block;
+    width: 1.9rem;
+    height: 1.9rem;
+    border: .1rem solid $color-grey-medium;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: all .2s ease-in-out;
+
+    &:hover {
+      border-color: $color-grey-dark;
+    }
+
+    &::before, &::after {
+      content: '';
+      background: $color-black;
+      position: absolute;
+    }
+
+    &::before {
+      width: .1rem;
+      height: .7rem;
+      left: .8rem;
+      top: .5rem;
+    }
+
+    &::after {
+      width: .7rem;
+      height: .1rem;
+      left: .5rem;
+      top: .8rem;
+    }
+  }
+}

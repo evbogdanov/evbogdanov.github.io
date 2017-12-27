@@ -14,8 +14,10 @@ body {
   background: $color-orange;
   color: $color-black;
   font-family: 'Helvetica Neue', Helvetica, sans-serif;
-  font-weight: 200;
+  font-weight: $font-weight-normal;
+  font-size: $font-size-normal;
   line-height: 1.45;
+  letter-spacing: .05rem;
 }
 
 ::-webkit-input-placeholder {
@@ -23,5 +25,14 @@ body {
 }
 
 a {
+  color: $color-blue;
   text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
 }

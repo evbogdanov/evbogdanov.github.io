@@ -2,7 +2,6 @@
   width: 100%;
   background: $color-blue;
   color: white;
-  font-size: 1.7rem;
 
   @include if-screen(medium) {
     width: 30rem;
@@ -21,21 +20,19 @@
     width: 10rem;
     height: 10rem;
     margin: 5.5rem 0 0;
-    vertical-align: top;
   }
 
   &__name {
-    line-height: 5rem;
+    font-size: 1.6rem;
+    line-height: 4rem;
     margin: 0;
-    font-size: 1.8rem;
+    font-weight: $font-weight-bold;
   }
 
   &__bio {
     padding: 0 15%;
-    line-height: 1.6;
 
     @include if-screen(medium) {
-      font-size: 1.6rem;
       padding: 0 2.5rem;
     }
   }
@@ -93,23 +90,18 @@
   }
 
   &__h2 {
-    text-transform: uppercase;
-    font-weight: inherit;
-    font-size: 1.7rem;
     margin: 3rem 0 1rem;
-    letter-spacing: .15rem;
+    @include h2;
   }
 
   &__activity-list {
-    list-style: none;
     color: $color-blue-dark;
     margin-bottom: 5.5rem;
-    font-size: 1.6rem;
   }
 
   &__activity-item {
-    height: 3rem;
-    line-height: 3rem;
+    height: 2.8rem;
+    line-height: 2.8rem;
     padding-left: 2.5rem;
     position: relative;
 
