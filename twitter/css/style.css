@@ -64,8 +64,8 @@ a {
     text-align: center; }
   .profile__img {
     display: inline-block;
-    width: 10em;
-    height: 10em;
+    width: 10rem;
+    height: 10rem;
     margin: 5.5rem 0 0;
     vertical-align: top; }
   .profile__name {
