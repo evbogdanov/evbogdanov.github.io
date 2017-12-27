@@ -67,8 +67,7 @@ a {
     width: 10em;
     height: 10em;
     margin: 5.5rem 0 0;
-    vertical-align: top;
-    background: red; }
+    vertical-align: top; }
   .profile__name {
     line-height: 5rem;
     margin: 0;
