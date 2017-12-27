@@ -18,6 +18,9 @@ body {
 ::-webkit-input-placeholder {
   color: #c6c1b0; }
 
+a {
+  text-decoration: none; }
+
 .container {
   background: #f2eee8;
   max-width: 150rem;
@@ -49,10 +52,109 @@ body {
 
 .profile {
   width: 100%;
-  background: #80a8cc; }
+  background: #80a8cc;
+  color: white;
+  font-size: 1.7rem; }
   @media (min-width: 900px) {
     .profile {
       width: 30rem; } }
+  .profile a {
+    color: white; }
+  .profile__info {
+    text-align: center; }
+  .profile__img {
+    display: inline-block;
+    width: 10em;
+    height: 10em;
+    margin: 5.5rem 0 0;
+    vertical-align: top;
+    background: red; }
+  .profile__name {
+    line-height: 5rem;
+    margin: 0;
+    font-size: 1.8rem; }
+  .profile__bio {
+    padding: 0 15%;
+    line-height: 1.6; }
+    @media (min-width: 900px) {
+      .profile__bio {
+        font-size: 1.6rem;
+        padding: 0 2.5rem; } }
+  .profile__url {
+    display: inline-block;
+    margin: 2rem 0;
+    position: relative; }
+    .profile__url:hover {
+      text-decoration: underline; }
+    .profile__url::before {
+      content: '';
+      width: 1.5rem;
+      height: 1.5rem;
+      position: absolute;
+      left: -2.2rem;
+      top: .5rem;
+      background-image: url(../img/url.png);
+      background-size: cover; }
+  .profile__btn {
+    display: block;
+    background: #6c94b8;
+    max-width: 16rem;
+    height: 4rem;
+    border-radius: 4rem;
+    line-height: 4rem;
+    margin: 0 auto 4rem; }
+  .profile__media {
+    width: 30rem;
+    height: 30rem;
+    background-image: url(../img/media.jpg);
+    background-size: cover;
+    display: none; }
+    @media (min-width: 900px) {
+      .profile__media {
+        display: block; } }
+  .profile__activities {
+    padding: 0 2.5rem;
+    display: none; }
+    @media (min-width: 900px) {
+      .profile__activities {
+        display: block; } }
+  .profile__h2 {
+    text-transform: uppercase;
+    font-weight: inherit;
+    font-size: 1.7rem;
+    margin: 3rem 0 1rem;
+    letter-spacing: .15rem; }
+  .profile__activity-list {
+    list-style: none;
+    color: #6c94b8;
+    margin-bottom: 5.5rem;
+    font-size: 1.6rem; }
+  .profile__activity-item {
+    height: 3rem;
+    line-height: 3rem;
+    padding-left: 2.5rem;
+    position: relative; }
+    .profile__activity-item a {
+      text-decoration: underline; }
+    .profile__activity-item a:hover {
+      text-decoration: none; }
+    .profile__activity-item::before {
+      content: '';
+      display: block;
+      width: 1.6rem;
+      height: 1.5rem;
+      position: absolute;
+      left: 0;
+      top: .7rem;
+      background-size: cover; }
+  .profile__activity-item-fol::before {
+    background-image: url(../img/act-fol.png); }
+  .profile__activity-item-rep::before {
+    background-image: url(../img/act-rep.png); }
+  .profile__activity-item-ret::before {
+    background-image: url(../img/act-ret.png); }
+  .profile__activity-item-fav::before {
+    background-image: url(../img/act-fav.png); }
 
 .main {
   width: 100%; }
