@@ -4,5 +4,76 @@
   @include if-screen(medium) {
     width: auto;
     flex-grow: 1;
+    padding: 4rem;
+  }
+
+  &__nav {
+    background: $color-white;
+  }
+
+  &__nav-list {
+    display: flex;
+  }
+
+  &__nav-item {
+    flex: 0 0 25%;
+  }
+
+  &__nav-link {
+    display: flex;
+    height: 6.4rem;
+    flex-direction: column;
+    justify-content: center;
+
+    &_active {
+      box-shadow: inset 0 -.4rem 0 $color-blue;
+    }
+
+    @include if-screen(medium) {
+      height: 8rem;
+
+      &_active {
+        box-shadow: inset 0 -.5rem 0 $color-blue;
+      }
+    }
+  }
+
+  &__nav-link > * {
+    display: block;
+    text-align: center;
+  }
+
+  &__nav-title {
+    text-transform: uppercase;
+    color: $color-grey-dark;
+    font-size: 1.1rem;
+
+    @include if-screen(small) {
+      font-size: 1.3rem;
+    }
+  }
+
+  &__nav-title > * {
+    text-decoration: none;
+  }
+
+  &__nav-title-small {
+    @include if-screen(small) {
+      display: none;
+    }
+  }
+
+  &__nav-title-large {
+    display: none;
+
+    @include if-screen(small) {
+      display: inline;
+    }
+  }
+
+  &__nav-counter {
+    font-weight: $font-weight-bold;
+    color: $color-black;
+    font-size: 1.6rem;
   }
 }

@@ -164,7 +164,50 @@ img {
   @media (min-width: 900px) {
     .main {
       width: auto;
-      flex-grow: 1; } }
+      flex-grow: 1;
+      padding: 4rem; } }
+  .main__nav {
+    background: #fffbf5; }
+  .main__nav-list {
+    display: flex; }
+  .main__nav-item {
+    flex: 0 0 25%; }
+  .main__nav-link {
+    display: flex;
+    height: 6.4rem;
+    flex-direction: column;
+    justify-content: center; }
+    .main__nav-link_active {
+      box-shadow: inset 0 -0.4rem 0 #80a8cc; }
+    @media (min-width: 900px) {
+      .main__nav-link {
+        height: 8rem; }
+        .main__nav-link_active {
+          box-shadow: inset 0 -0.5rem 0 #80a8cc; } }
+  .main__nav-link > * {
+    display: block;
+    text-align: center; }
+  .main__nav-title {
+    text-transform: uppercase;
+    color: #c6c1b0;
+    font-size: 1.1rem; }
+    @media (min-width: 700px) {
+      .main__nav-title {
+        font-size: 1.3rem; } }
+  .main__nav-title > * {
+    text-decoration: none; }
+  @media (min-width: 700px) {
+    .main__nav-title-small {
+      display: none; } }
+  .main__nav-title-large {
+    display: none; }
+    @media (min-width: 700px) {
+      .main__nav-title-large {
+        display: inline; } }
+  .main__nav-counter {
+    font-weight: 500;
+    color: #605e58;
+    font-size: 1.6rem; }
 
 .extra {
   display: none;
