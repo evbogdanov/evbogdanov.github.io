@@ -83,4 +83,14 @@
     color: $color-black;
     font-size: 1.6rem;
   }
+
+  &__tweets {
+    background: $color-white;
+    border-top: .1rem solid $color-grey-medium;
+
+    @include if-screen(medium) {
+      border-top: none;
+      margin-top: 3rem;
+    }
+  }
 }

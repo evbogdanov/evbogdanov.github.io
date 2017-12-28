@@ -215,6 +215,13 @@ img {
     font-weight: 500;
     color: #605e58;
     font-size: 1.6rem; }
+  .main__tweets {
+    background: #fffbf5;
+    border-top: 0.1rem solid #e3dfd8; }
+    @media (min-width: 900px) {
+      .main__tweets {
+        border-top: none;
+        margin-top: 3rem; } }
 
 .extra {
   display: none;
@@ -398,3 +405,63 @@ img {
     height: .1rem;
     left: .5rem;
     top: .8rem; }
+
+.tweet {
+  padding: 3rem;
+  border-top: 0.1rem solid #e3dfd8; }
+  .tweet:first-child {
+    border-top: none; }
+  .tweet__content {
+    padding-left: 6rem; }
+  .tweet__links {
+    height: 3rem;
+    display: flex;
+    justify-content: space-between; }
+  .tweet__link-user {
+    position: relative; }
+  .tweet__ava {
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    left: -6rem;
+    top: 0;
+    border-radius: 100%;
+    background-size: cover; }
+  .tweet__fullname {
+    color: #605e58; }
+  .tweet__link-user:hover .tweet__fullname {
+    color: #80a8cc;
+    text-decoration: underline; }
+  .tweet__username {
+    color: #c6c1b0; }
+  .tweet__link-time {
+    color: #c6c1b0; }
+    .tweet__link-time:hover {
+      text-decoration: underline; }
+  .tweet__actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem; }
+  .tweet__actions-left, .tweet__actions-right {
+    height: 1.5rem;
+    display: flex; }
+  .tweet__action {
+    background-size: cover;
+    margin-right: 1.9rem; }
+    .tweet__action:last-child {
+      margin-right: 0; }
+    .tweet__action_reply {
+      width: 1.6rem;
+      background-image: url(../img/action-reply.png); }
+    .tweet__action_fave {
+      width: 1.5rem;
+      background-image: url(../img/action-fave.png); }
+    .tweet__action_retweet {
+      width: 1.5rem;
+      background-image: url(../img/action-retweet.png); }
+    .tweet__action_more {
+      width: 1.3rem;
+      background-image: url(../img/action-more.png); }
+    .tweet__action_full {
+      width: 1.3rem;
+      background-image: url(../img/action-full.png); }

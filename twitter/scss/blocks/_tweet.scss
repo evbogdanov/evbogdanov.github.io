@@ -1,0 +1,99 @@
+.tweet {
+  padding: 3rem;
+  border-top: .1rem solid $color-grey-medium;
+
+  &:first-child {
+    border-top: none;
+  }
+
+  &__content {
+    padding-left: 6rem;
+  }
+
+  &__links {
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__link-user {
+    position: relative;
+  }
+
+  &__ava {
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    left: -6rem;
+    top: 0;
+    border-radius: 100%;
+    background-size: cover;
+  }
+
+  &__fullname {
+    color: $color-black;
+  }
+
+  &__link-user:hover &__fullname {
+    color: $color-blue;
+    text-decoration: underline;
+  }
+
+  &__username {
+    color: $color-grey-dark;
+  }
+
+  &__link-time {
+    color: $color-grey-dark;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+
+  &__actions-left,
+  &__actions-right {
+    height: 1.5rem;
+    display: flex;
+  }
+
+  &__action {
+    background-size: cover;
+    margin-right: 1.9rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &_reply {
+      width: 1.6rem;
+      background-image: url(../img/action-reply.png);
+    }
+
+    &_fave {
+      width: 1.5rem;
+      background-image: url(../img/action-fave.png);
+    }
+
+    &_retweet {
+      width: 1.5rem;
+      background-image: url(../img/action-retweet.png);
+    }
+
+    &_more {
+      width: 1.3rem;
+      background-image: url(../img/action-more.png);
+    }
+
+    &_full {
+      width: 1.3rem;
+      background-image: url(../img/action-full.png);
+    }
+  }
+}
