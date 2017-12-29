@@ -1,14 +1,16 @@
 .main {
-  width: 100%;
+  flex: 0 0 100%;
 
   @include if-screen(medium) {
-    width: auto;
-    flex-grow: 1;
+    flex: 1 1 auto;
     padding: 4rem;
   }
 
   &__nav {
     background: $color-white;
+    @include if-screen(medium) {
+      @include main-shadow;
+    }
   }
 
   &__nav-list {
@@ -91,6 +93,7 @@
     @include if-screen(medium) {
       border-top: none;
       margin-top: 3rem;
+      @include main-shadow;
     }
   }
 }

@@ -1,10 +1,10 @@
 .profile {
-  width: 100%;
+  flex: 0 0 100%;
   background: $color-blue;
   color: white;
 
   @include if-screen(medium) {
-    width: 30rem;
+    flex: 0 0 30rem;
   }
 
   a {
@@ -24,8 +24,9 @@
 
   &__name {
     font-size: 1.6rem;
-    line-height: 4rem;
     margin: 0;
+    height: 4.4rem;
+    line-height: 5.5rem;
     font-weight: $font-weight-bold;
   }
 
@@ -33,7 +34,7 @@
     padding: 0 15%;
 
     @include if-screen(medium) {
-      padding: 0 2.5rem;
+      padding: 0 2rem;
     }
   }
 

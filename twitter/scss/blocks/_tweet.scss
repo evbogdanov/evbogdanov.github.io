@@ -1,12 +1,18 @@
 .tweet {
-  padding: 3rem;
+  font-size: 1.4rem;
+  padding: 1.5rem;
   border-top: .1rem solid $color-grey-medium;
+
+  @include if-screen(extrasmall) {
+    font-size: 1.5rem;
+    padding: 3rem;
+  }
 
   &:first-child {
     border-top: none;
   }
 
-  &__content {
+  &__container {
     padding-left: 6rem;
   }
 
@@ -18,16 +24,27 @@
 
   &__link-user {
     position: relative;
+
+    &_retweeted::before {
+      display: inline-block;
+      content: '';
+      width: 1.5rem;
+      height: 1.5rem;
+      background-size: cover;
+      background-image: url(../img/retweeted.png);
+      position: relative;
+      top: .2rem;
+      margin-right: .2rem;
+    }
   }
 
-  &__ava {
+  &__img {
     position: absolute;
     width: 4rem;
     height: 4rem;
     left: -6rem;
     top: 0;
     border-radius: 100%;
-    background-size: cover;
   }
 
   &__fullname {
@@ -41,6 +58,11 @@
 
   &__username {
     color: $color-grey-dark;
+    display: none;
+
+    @include if-screen(extrasmall) {
+      display: inline;
+    }
   }
 
   &__link-time {
@@ -51,25 +73,46 @@
     }
   }
 
+  &__content img {
+    width: 100%;
+  }
   &__actions {
-    display: flex;
-    justify-content: space-between;
     margin-top: 2rem;
+
+    @include if-screen(extrasmall) {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
-  &__actions-left,
-  &__actions-right {
-    height: 1.5rem;
+  &__actions-left {
     display: flex;
+    justify-content: space-between;
+  }
+
+  &__actions-right {
+    display: none;
+
+    @include if-screen(extrasmall) {
+      display: flex;
+    }
   }
 
   &__action {
-    background-size: cover;
-    margin-right: 1.9rem;
+    margin-left: 3rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
 
-    &:last-child {
-      margin-right: 0;
+    &:first-child {
+      margin-left: 0;
     }
+  }
+
+  &__icon {
+    display: inline-block;
+    height: 1.5rem;
+    background-size: cover;
 
     &_reply {
       width: 1.6rem;
@@ -95,5 +138,14 @@
       width: 1.4rem;
       background-image: url(../img/action-full.png);
     }
+  }
+
+  &__counter {
+    color: $color-grey-dark;
+    margin-left: .5rem;
+  }
+
+  &__action:hover &__counter {
+    text-decoration: underline;
   }
 }

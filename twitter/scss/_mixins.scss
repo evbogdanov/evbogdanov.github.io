@@ -1,4 +1,7 @@
 @mixin if-screen($device) {
+  @if $device == extrasmall {
+    @media (min-width: 450px) { @content; };
+  }
   @if $device == small {
     @media (min-width: 700px) { @content; };
   }
@@ -18,4 +21,8 @@
   font-weight: $font-weight-normal;
   font-size: $font-size-normal;
   letter-spacing: .1rem;
+}
+
+@mixin main-shadow {
+  box-shadow: 0 .1rem .3rem rgba(0, 0, 0, .1);
 }
