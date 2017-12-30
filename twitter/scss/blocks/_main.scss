@@ -55,10 +55,10 @@
   &__nav-title {
     text-transform: uppercase;
     color: $color-grey-dark;
-    font-size: 1.1rem;
+    font-size: $font-size-small;
 
     @include if-screen(small) {
-      font-size: 1.3rem;
+      font-size: $font-size-medium-smaller;
     }
   }
 
@@ -83,7 +83,6 @@
   &__nav-counter {
     font-weight: $font-weight-bold;
     color: $color-black;
-    font-size: 1.6rem;
   }
 
   &__tweets {

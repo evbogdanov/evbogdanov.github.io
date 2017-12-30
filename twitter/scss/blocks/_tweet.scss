@@ -1,10 +1,8 @@
 .tweet {
-  font-size: 1.4rem;
   padding: 1.5rem;
   border-top: .1rem solid $color-grey-medium;
 
   @include if-screen(extrasmall) {
-    font-size: 1.5rem;
     padding: 3rem;
   }
 
@@ -67,6 +65,7 @@
 
   &__link-time {
     color: $color-grey-dark;
+    font-size: $font-size-medium-bigger;
 
     &:hover {
       text-decoration: underline;
@@ -76,6 +75,7 @@
   &__content img {
     width: 100%;
   }
+
   &__actions {
     margin-top: 2rem;
 
@@ -143,6 +143,7 @@
   &__counter {
     color: $color-grey-dark;
     margin-left: .5rem;
+    font-size: $font-size-medium-bigger;
   }
 
   &__action:hover &__counter {

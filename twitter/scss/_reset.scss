@@ -19,6 +19,10 @@ body {
   font-size: $font-size-normal;
   line-height: 1.45;
   letter-spacing: .05rem;
+
+  @include if-screen(medium) {
+    font-size: $font-size-normal-smaller;
+  }
 }
 
 ::-webkit-input-placeholder {

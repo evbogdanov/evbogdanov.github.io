@@ -19,7 +19,7 @@
 @mixin h2 {
   text-transform: uppercase;
   font-weight: $font-weight-normal;
-  font-size: $font-size-normal;
+  font-size: $font-size-normal-smaller;
   letter-spacing: .1rem;
 }
 
