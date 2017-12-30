@@ -31,10 +31,10 @@
   }
 
   &__bio {
-    padding: 0 15%;
+    padding: 0 17%;
 
     @include if-screen(medium) {
-      padding: 0 2rem;
+      padding: 0 1.7rem;
     }
   }
 
