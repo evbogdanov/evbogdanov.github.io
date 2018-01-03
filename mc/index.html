@@ -1,54 +1,61 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mom's calculator</title>
-    <style>
-      table {
-        border-collapse: collapse;
-      }
-      th, td {
-        border: 1px solid black;
-        width: 150px;
-        text-align: center;
-        padding: 7px 0;
-      }
-    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700&amp;subset=cyrillic">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <table>
-      <tr>
-        <th>Date</th>
-        <th>Quantity</th>
-        <th>Price</th>
-        <th>Daily revenue</th>
-        <th>Total revenue</th>
-      </tr>
-      <tr>
-        <td rowspan="3">1.1.2018</td>
-        <td>1</td>
-        <td>10</td>
-        <td rowspan="3">140</td>
-        <td rowspan="5">550</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>20</td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>30</td>
-      </tr>
-      <tr>
-        <td rowspan="2">2.1.2018</td>
-        <td>4</td>
-        <td>40</td>
-        <td rowspan="2">410</td>
-      </tr>
-      <tr>
-        <td>5</td>
-        <td>50</td>
-      </tr>
+    <header class="header">
+      <ul class="header__languages">
+        <li class="header__language header__language_active">
+          <a class="header__link" href="#">English</a>
+        </li>
+        <li class="header__language">
+          <a class="header__link" href="#">По-русски</a>
+        </li>
+      </ul>
+      <h1 class="header__title">Mom's calculator</h1>
+    </header>
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="table__cell table__cell_head">Date</th>
+          <th class="table__cell table__cell_head">Quantity</th>
+          <th class="table__cell table__cell_head">Price</th>
+          <th class="table__cell table__cell_head">Daily revenue</th>
+          <th class="table__cell table__cell_head">Total revenue</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="table__cell" rowspan="3">1.1.2018</td>
+          <td class="table__cell">1</td>
+          <td class="table__cell">10</td>
+          <td class="table__cell" rowspan="3">140</td>
+          <td class="table__cell" rowspan="5">550</td>
+        </tr>
+        <tr>
+          <td class="table__cell">2</td>
+          <td class="table__cell">20</td>
+        </tr>
+        <tr>
+          <td class="table__cell">3</td>
+          <td class="table__cell">30</td>
+        </tr>
+        <tr>
+          <td class="table__cell" rowspan="2">2.1.2018</td>
+          <td class="table__cell">4</td>
+          <td class="table__cell">40</td>
+          <td class="table__cell" rowspan="2">410</td>
+        </tr>
+        <tr>
+          <td class="table__cell">5</td>
+          <td class="table__cell">50</td>
+        </tr>
+      </tbody>
     </table>
   </body>
 </html>
