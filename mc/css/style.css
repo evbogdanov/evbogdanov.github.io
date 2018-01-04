@@ -88,11 +88,24 @@ body {
   border: .1rem solid #ccc;
   width: 20%;
   text-align: center;
-  padding: 1rem 0;
 }
 
 .table__cell_head {
   font-weight: 400;
   padding: 1rem 0;
   background: #f4f4f4;
+}
+
+.table__input {
+  text-align: center;
+  width: 100%;
+  height: 4rem;
+  line-height: 4rem;
+  border: none;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.table__input:focus {
+  outline: none;
 }
