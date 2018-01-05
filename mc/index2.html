@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .table {
+        width: 100%;
+      }
+      .table__head {
+        display: flex;
+      }
+      .table__column-name {
+        text-align: center;
+        padding: 15px 0;
+        flex: 0 0 20%;
+        border-bottom: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-weight: bold;
+        background: #f4f4f4;
+      }
+      .table__body {
+        display: flex;
+      }
+      .table__days {
+        flex: 0 0 80%;
+        border-right: 1px solid black;
+      }
+      .table__day {
+        display: flex;
+        border-bottom: 1px solid black;
+      }
+      .table__day-name {
+        flex: 0 0 25%;
+        border-right: 1px solid black;
+      }
+      .table__records {
+        flex: 0 0 50%;
+        border-right: 1px solid black;
+      }
+      .table__record {
+        display: flex;
+      }
+      .table__record:not(:last-child) {
+        border-bottom: 1px solid black;
+      }
+      .table__quantity, .table__price {
+        flex: 0 0 50%;
+      }
+      .table__quantity {
+        border-right: 1px solid black;
+      }
+      .table__daily-revenue {
+        flex: 0 0 25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .table__total-revenue {
+        flex: 0 0 20%;
+        border-bottom: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .table__new-day, .table__new-record {
+        margin: auto;
+        padding: 10px 0;
+      }
+      .table__new-day {
+        padding: 20px 0;
+      }
+      .table__input {
+        text-align: center;
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        border: none;
+        font-size: inherit;
+        font-family: inherit;
+      }
+      .table__input:focus {
+        outline: none;
+      }
+      .table__input_big {
+        height: 100%;
+        line-height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="table">
+      <div class="table__head">
+        <div class="table__column-name">Day</div>
+        <div class="table__column-name">Quantity</div>
+        <div class="table__column-name">Price</div>
+        <div class="table__column-name">Daily revenue</div>
+        <div class="table__column-name">Total revenue</div>
+      </div>
+      <div class="table__body"></div>
+    </div>
+    <script>
+      class Record {
+        constructor(rerenderRevenues) {
+          this.quantity = ''
+          this.price = ''
+          this.el = null
+          this.rerenderRevenues = rerenderRevenues
+        }
+
+        getRevenue() {
+          const q = parseInt(this.quantity, 10) || 0,
+                p = parseFloat(this.price) || 0
+          return q * p
+        }
+
+        quantityChanged(ev) {
+          this.quantity = ev.target.value
+          this.rerenderRevenues()
+        }
+        
+        priceChanged(ev) {
+          this.price = ev.target.value
+          this.rerenderRevenues()
+        }
+        
+        render() {
+          this.el = document.createElement('div')
+          this.el.setAttribute('class', 'table__record')
+
+          const elQuantityInput = document.createElement('input')
+          elQuantityInput.setAttribute('class', 'table__input')
+          elQuantityInput.onblur = this.quantityChanged.bind(this)
+          
+          const elQuantity = document.createElement('div')
+          elQuantity.setAttribute('class', 'table__quantity')
+          elQuantity.appendChild(elQuantityInput)
+          this.el.appendChild(elQuantity)
+
+          const elPriceInput  = document.createElement('input')
+          elPriceInput.setAttribute('class', 'table__input')
+          elPriceInput.onblur = this.priceChanged.bind(this)
+
+          const elPrice = document.createElement('div')
+          elPrice.setAttribute('class', 'table__price')
+          elPrice.appendChild(elPriceInput)
+          this.el.appendChild(elPrice)
+
+          return this.el
+        }
+      }
+
+      class Day {
+        constructor(rerenderRevenues) {
+          this.name = ''
+          this.records = []
+          this.el = null
+          this.elNameInput = null
+          this.elRecords = null
+          this.elNewRecord = null
+          this.elDailyRevenue = null
+          this.rerenderRevenues = rerenderRevenues
+        }
+
+        newRecordClicked(ev) {
+          ev.preventDefault()
+          this.addRecord()
+        }
+
+        addRecord() {
+          const record = new Record(this.rerenderRevenues)
+          const elRecord = record.render()
+          this.records.push(record)
+          this.elRecords.insertBefore(elRecord, this.elNewRecord)
+        }
+
+        getDailyRevenue() {
+          return this.records.reduce((revenue, record) => revenue + record.getRevenue(), 0)
+        }
+
+        nameChanged(ev) {
+          this.name = ev.target.value
+        }
+
+        render() {
+          this.el = document.createElement('div')
+          this.el.setAttribute('class', 'table__day')
+
+          this.elNameInput = document.createElement('input')
+          this.elNameInput.setAttribute('class', 'table__input table__input_big')
+          this.elNameInput.onblur = this.nameChanged.bind(this)
+
+          const elDayName = document.createElement('div')
+          elDayName.setAttribute('class', 'table__day-name')
+          elDayName.textContent = this.name
+          elDayName.appendChild(this.elNameInput)
+          this.el.appendChild(elDayName)
+
+          const elNewRecordLink = document.createElement('a')
+          elNewRecordLink.setAttribute('class', 'table__new-record')
+          elNewRecordLink.href = '#'
+          elNewRecordLink.textContent = 'New record'
+          elNewRecordLink.onclick = this.newRecordClicked.bind(this)
+
+          this.elNewRecord = document.createElement('div')
+          this.elNewRecord.setAttribute('class', 'table__record')
+          this.elNewRecord.appendChild(elNewRecordLink)
+
+          this.elRecords = document.createElement('div')
+          this.elRecords.setAttribute('class', 'table__records')
+          this.elRecords.appendChild(this.elNewRecord)
+          this.el.appendChild(this.elRecords)
+          
+          this.elDailyRevenue = document.createElement('div')
+          this.elDailyRevenue.setAttribute('class', 'table__daily-revenue')
+          this.elDailyRevenue.textContent = '0.00'
+          this.el.appendChild(this.elDailyRevenue)
+
+          return this.el
+        }
+      }
+
+      class Calculator {
+        constructor(el) {
+          this.el = el
+          this.elDays = null
+          this.elNewDay = null
+          this.elTotalRevenue = null
+          this.days = []
+        }
+
+        newDayClicked(ev) {
+          ev.preventDefault()
+          this.addDay()
+        }
+
+        addDay() {
+          const day = new Day(this.rerenderRevenues.bind(this))
+          this.days.push(day)
+          this.elDays.insertBefore(day.render(), this.elNewDay)
+          day.addRecord()
+          day.addRecord()
+          day.addRecord()
+          day.elNameInput.focus()
+        }
+
+        rerenderRevenues() {
+          let totalRevenue = 0
+          this.days.forEach(day => {
+            const dailyRevenue = day.getDailyRevenue()
+            day.elDailyRevenue.textContent = dailyRevenue.toFixed(2)
+            totalRevenue += dailyRevenue
+          })
+          this.elTotalRevenue.textContent = totalRevenue.toFixed(2)
+        }
+        
+        render() {
+          const elNewDayLink = document.createElement('a')
+          elNewDayLink.setAttribute('class', 'table__new-day')
+          elNewDayLink.href = '#'
+          elNewDayLink.textContent = 'New day'
+          elNewDayLink.onclick = this.newDayClicked.bind(this)
+
+          this.elNewDay = document.createElement('div')
+          this.elNewDay.setAttribute('class', 'table__day')
+          this.elNewDay.appendChild(elNewDayLink)
+
+          this.elDays = document.createElement('div')
+          this.elDays.setAttribute('class', 'table__days')
+          this.elDays.appendChild(this.elNewDay)
+          this.el.appendChild(this.elDays)
+
+          this.elTotalRevenue = document.createElement('div')
+          this.elTotalRevenue.setAttribute('class', 'table__total-revenue')
+          this.elTotalRevenue.textContent = '0.00'
+          this.el.appendChild(this.elTotalRevenue)
+        }
+      }
+
+      function main() {
+        const calc = new Calculator(document.querySelector('.table__body'))
+        calc.render()
+      }
+      document.addEventListener('DOMContentLoaded', main)
+    </script>
+  </body>
+</html>
