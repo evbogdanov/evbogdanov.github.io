@@ -2,17 +2,6 @@ const URL_SHORTCUTS = 'shortcuts.json',
       KEY_ENTER = 13,
       REPLACE = '{{s}}'
 
-function readShortcuts(callback) {
-  const request = new XMLHttpRequest()
-  request.open('GET', URL_SHORTCUTS, true)
-  request.onload = function () {
-    if (this.status === 200)
-      return callback(JSON.parse(this.response))
-    return callback(null)
-  }
-  request.send()
-}
-
 function handleKey(key, shortcuts, elLink, elSearch, elDismiss) {
   const isEnter = key === KEY_ENTER,
         searchText = elSearch.value,
@@ -38,25 +27,26 @@ function handleKey(key, shortcuts, elLink, elSearch, elDismiss) {
     window.open(link)
 }
 
-function main() {
+function processShortcuts(shortcuts) {
   const elLink = document.getElementById('link-in'),
         elSearch = document.getElementById('search'),
         elDismiss = document.getElementById('dismiss')
-  readShortcuts(function (shortcuts) {
-    if (!shortcuts) {
-      console.error('No shortcuts')
-      return
-    }
-    elSearch.addEventListener('keyup', function (ev) {
-      handleKey(ev.which, shortcuts, elLink, elSearch, elDismiss)
-    })
-    elDismiss.addEventListener('click', function () {
-      elSearch.value = ''
-      elLink.innerText = ''
-      elDismiss.style.display = 'none'
-      elSearch.focus()
-    })
+  elSearch.addEventListener('keyup', function (ev) {
+    handleKey(ev.which, shortcuts, elLink, elSearch, elDismiss)
   })
+  elDismiss.addEventListener('click', function () {
+    elSearch.value = ''
+    elLink.innerText = ''
+    elDismiss.style.display = 'none'
+    elSearch.focus()
+  })
+}
+
+function main() {
+  fetch(URL_SHORTCUTS)
+    .then(response => response.json())
+    .then(shortcuts => processShortcuts(shortcuts))
+    .catch(() => console.error('No shortcuts'))
 }
 
 document.addEventListener('DOMContentLoaded', main)
