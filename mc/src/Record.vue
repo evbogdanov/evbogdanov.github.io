@@ -1,10 +1,10 @@
 <template>
   <div class="table__record">
     <div class="table__quantity">
-      <input class="table__input" type="text" :value="quantity" v-on:input="quantityChanged">
+      <input class="table__input" type="text" :value="quantity" @input="quantityChanged">
     </div>
     <div class="table__price">
-      <input class="table__input" type="text" :value="price" v-on:input="priceChanged">
+      <input class="table__input" type="text" :value="price" @input="priceChanged">
     </div>
   </div>  
 </template>

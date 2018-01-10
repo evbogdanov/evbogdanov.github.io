@@ -13,6 +13,7 @@
           v-for="(day, i) in days"
           v-on:recordAdded="addNewRecordForDay"
           v-on:recordChanged="updateRecord"
+          v-on:dayNameChanged="updateDayName"
           :key="i"
           :index="i"
           :name="day.name"
@@ -38,16 +39,7 @@
 
     data() {
       return {
-        days: [
-          {name: 'First day', records: [
-            {quantity: 1, price: 1},
-            {quantity: 1, price: 2}
-          ]},
-          {name: 'Second day', records: [
-            {quantity: 1, price: 3},
-            {quantity: 1, price: 4}
-          ]}
-        ]
+        days: []
       }
     },
 
@@ -77,6 +69,9 @@
       updateRecord(dayIndex, recordIndex, price, quantity) {
         this.days[dayIndex].records[recordIndex].price = price
         this.days[dayIndex].records[recordIndex].quantity = quantity
+      },
+      updateDayName(dayIndex, dayName) {
+        this.days[dayIndex].name = dayName
       }
     }
   }

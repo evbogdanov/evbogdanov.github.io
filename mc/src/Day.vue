@@ -1,7 +1,11 @@
 <template>
   <div class="table__day">
     <div class="table__day-name">
-      <input class="table__input table__input_big" type="text" :value="name">
+      <input
+        class="table__input table__input_big" 
+        type="text"
+        :value="name"
+        @input="updateName">
     </div>
     <div class="table__records">
       <app-record
@@ -41,6 +45,9 @@
       },
       updateRecord(recordIndex, price, quantity) {
         this.$emit('recordChanged', this.index, recordIndex, price, quantity)
+      },
+      updateName(ev) {
+        this.$emit('dayNameChanged', this.index, ev.target.value)
       }
     }
   }
