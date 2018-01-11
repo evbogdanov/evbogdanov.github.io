@@ -1,12 +1,17 @@
-<template>
-  <div class="table__record">
-    <div class="table__quantity">
-      <input class="table__input" type="text" :value="quantity" @input="quantityChanged">
-    </div>
-    <div class="table__price">
-      <input class="table__input" type="text" :value="price" @input="priceChanged">
-    </div>
-  </div>  
+<template lang="pug">
+	.table__record
+		.table__quantity
+			input.table__input(
+				type="text"
+				:value="quantity"
+				@input="quantityChanged"
+			)
+		.table__price
+			input.table__input(
+				type="text"
+				:value="price"
+				@input="priceChanged"
+			)
 </template>
 
 <script src="./Record.js"></script>

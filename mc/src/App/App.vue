@@ -1,8 +1,7 @@
-<template>
-  <div class="app">
-    <app-header></app-header>
-    <app-table></app-table>
-  </div>
+<template lang="pug">
+	.app
+		app-header
+		app-table
 </template>
 
 <style lang="scss" src="./App.scss"></style>
