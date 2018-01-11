@@ -5,7 +5,4 @@
   </div>
 </template>
 
-<style lang="scss">
-  @import "./scss/variables";
-  @import "./scss/reset";
-</style>
+<style lang="scss" src="./App.scss"></style>

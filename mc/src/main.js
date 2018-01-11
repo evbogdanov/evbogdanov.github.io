@@ -1,7 +1,7 @@
 import Vue from 'vue'
-import App from './App.vue'
-import Header from './Header.vue'
-import Table from './Table.vue'
+import App from './App/App.vue'
+import Header from './Header/Header.vue'
+import Table from './Table/Table.vue'
 
 Vue.component('app-header', Header)
 Vue.component('app-table', Table)
