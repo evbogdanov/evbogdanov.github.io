@@ -1,5 +1,5 @@
 .header {
-	padding: 3rem 0 4rem;
+	padding: 3rem 0 5rem;
 	text-align: center;
 
 	&__languages {
@@ -32,9 +32,5 @@
 	  font-weight: 400;
 	  line-height: 6rem;
 	  margin-top: 1rem;
-	}
-	
-	&__title::after {
-	  content: '💰';
 	}
 }

@@ -1,16 +1,17 @@
 .table {
-  width: 100%;
+	width: 100%;
+	border-top: .1rem solid $color-grey-dark;
+	border-bottom: .1rem solid $color-grey-dark;
   
 	&__head {
 	  display: flex;
-	  border-top: .1rem solid $color-grey-dark;
 	  border-bottom: .1rem solid $color-grey-dark;
 	  background: $color-grey;
 	}
 	
 	&__column-name {
 	  text-align: center;
-	  padding: 1.5rem 0;
+	  padding: 1.5rem;
 	  flex: 0 0 20%;
 	  display: flex;
 	  flex-direction: column;
@@ -29,19 +30,18 @@
 	
 	&__total-revenue {
 	  flex: 0 0 20%;
-	  border-bottom: .1rem solid $color-grey-dark;
 	  display: flex;
 	  justify-content: center;
 	  align-items: center;
 	}
 	
 	&__new-day {
-		border-bottom: .1rem solid $color-grey-dark;
 		text-align: center;
-		padding: 3rem 0;
+		padding: 4rem 0;
 	}
 	
 	&__new-day-link {
+		font-size: 1.8rem;
 	}
 
 	&__input {

@@ -30,14 +30,21 @@ export default {
     addNewDay(ev) {
       ev.preventDefault()
       this.days.push({name: '', records: []})
+      const dayIndex = this.days.length - 1
+      this.addNewRecordForDay(dayIndex)
+      this.addNewRecordForDay(dayIndex)
+      this.addNewRecordForDay(dayIndex)
     },
+
     addNewRecordForDay(dayIndex) {
       this.days[dayIndex].records.push({price: '', quantity: ''})
     },
+
     updateRecord(dayIndex, recordIndex, price, quantity) {
       this.days[dayIndex].records[recordIndex].price = price
       this.days[dayIndex].records[recordIndex].quantity = quantity
     },
+
     updateDayName(dayIndex, dayName) {
       this.days[dayIndex].name = dayName
     }

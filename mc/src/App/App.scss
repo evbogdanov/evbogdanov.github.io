@@ -15,6 +15,7 @@ body {
   font-family: 'Lora', serif;
   font-size: 1.6rem;
   color: #222;
+  background: $color-grey;
 }
 
 a {
@@ -28,4 +29,11 @@ a {
 
 a:hover {
   border-bottom-color: rgba($color-blue, .75);
+}
+
+.app {
+	width: 100%;
+	max-width: 150rem;
+	margin: 0 auto;
+	background: white;
 }

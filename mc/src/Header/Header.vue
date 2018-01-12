@@ -5,7 +5,7 @@
 				a.header__link(href="#") English
 			li.header__language
 				a.header__link(href="#") По-русски
-		h1.header__title Mom's calculator
+		h1.header__title M👵m's calculat💰r
 </template>
 
 <style lang="scss" src="./Header.scss"></style>
