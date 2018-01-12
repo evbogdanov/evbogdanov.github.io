@@ -20,12 +20,12 @@
 					:records="day.records"
 					:daily-revenue="dailyRevenues[i]"
 				)
-				.table__day
-					a.table__new-day(
+				.table__new-day
+					a.table__new-day-link(
 						href="#"
 						@click="addNewDay"
 					) New day
-			.table__total-revenue {{ totalRevenue }}
+			.table__total-revenue {{ totalRevenue.toFixed(2) }}
 </template>
 
 <script src="./Table.js"></script>

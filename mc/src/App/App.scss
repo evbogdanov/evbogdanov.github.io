@@ -16,3 +16,16 @@ body {
   font-size: 1.6rem;
   color: #222;
 }
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: $color-blue;
+  border-bottom: .1rem solid rgba($color-blue, .25);
+  padding-bottom: .2rem;
+  transition: border-bottom-color .3s ease;
+}
+
+a:hover {
+  border-bottom-color: rgba($color-blue, .75);
+}

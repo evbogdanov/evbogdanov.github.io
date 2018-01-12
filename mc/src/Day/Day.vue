@@ -1,12 +1,12 @@
 <template lang="pug">
-	.table__day
-		.table__day-name
+	.day
+		.day__name
 			input.table__input.table__input_big(
 				type="text"
 				:value="name"
 				@input="updateName"
 			)
-		.table__records
+		.day__records
 			app-record(
 				v-for="(record, i) in records"
 				v-on:recordChanged="updateRecord"
@@ -15,12 +15,14 @@
 				:quantity="record.quantity"
 				:price="record.price"
 			)
-			.table__record
-				a.table__new-record(
+			.day__new-record
+				a.day__new-record-link(
 					href="#"
 					@click="addNewRecord"
-				) New record
-		.table__daily-revenue {{ dailyRevenue }}
+				) +
+		.day__revenue {{ dailyRevenue.toFixed(2) }}
 </template>
 
 <script src="./Day.js"></script>
+
+<style lang="scss" src="./Day.scss"></style>

@@ -1,0 +1,16 @@
+.record {
+  display: flex;
+
+	&:not(:last-child) {
+	  border-bottom: .1rem solid $color-grey-dark;
+	}
+
+	&__quantity,
+	&__price {
+	  flex: 0 0 50%;
+	}
+
+	&__quantity {
+	  border-right: .1rem solid $color-grey-dark;
+	}
+}

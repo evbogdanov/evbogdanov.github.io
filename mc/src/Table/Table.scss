@@ -1,84 +1,65 @@
 .table {
   width: 100%;
-}
-.table__head {
-  display: flex;
-}
-.table__column-name {
-  text-align: center;
-  padding: 15px 0;
-  flex: 0 0 20%;
-  border-bottom: 1px solid black;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-weight: bold;
-  background: #f4f4f4;
-}
-.table__body {
-  display: flex;
-}
-.table__days {
-  flex: 0 0 80%;
-  border-right: 1px solid black;
-}
-.table__day {
-  display: flex;
-  border-bottom: 1px solid black;
-}
-.table__day-name {
-  flex: 0 0 25%;
-  border-right: 1px solid black;
-}
-.table__records {
-  flex: 0 0 50%;
-  border-right: 1px solid black;
-}
-.table__record {
-  display: flex;
-}
-.table__record:not(:last-child) {
-  border-bottom: 1px solid black;
-}
-.table__quantity, .table__price {
-  flex: 0 0 50%;
-}
-.table__quantity {
-  border-right: 1px solid black;
-}
-.table__daily-revenue {
-  flex: 0 0 25%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.table__total-revenue {
-  flex: 0 0 20%;
-  border-bottom: 1px solid black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.table__new-day, .table__new-record {
-  margin: auto;
-  padding: 10px 0;
-}
-.table__new-day {
-  padding: 20px 0;
-}
-.table__input {
-  text-align: center;
-  width: 100%;
-  height: 40px;
-  line-height: 40px;
-  border: none;
-  font-size: inherit;
-  font-family: inherit;
-}
-.table__input:focus {
-  outline: none;
-}
-.table__input_big {
-  height: 100%;
-  line-height: 100%;
+  
+	&__head {
+	  display: flex;
+	  border-top: .1rem solid $color-grey-dark;
+	  border-bottom: .1rem solid $color-grey-dark;
+	  background: $color-grey;
+	}
+	
+	&__column-name {
+	  text-align: center;
+	  padding: 1.5rem 0;
+	  flex: 0 0 20%;
+	  display: flex;
+	  flex-direction: column;
+	  justify-content: center;
+	  font-size: 1.8rem;
+	}
+	
+	&__body {
+	  display: flex;
+	}
+	
+	&__days {
+	  flex: 0 0 80%;
+	  border-right: .1rem solid $color-grey-dark;
+	}
+	
+	&__total-revenue {
+	  flex: 0 0 20%;
+	  border-bottom: .1rem solid $color-grey-dark;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	}
+	
+	&__new-day {
+		border-bottom: .1rem solid $color-grey-dark;
+		text-align: center;
+		padding: 3rem 0;
+	}
+	
+	&__new-day-link {
+	}
+
+	&__input {
+	  text-align: center;
+	  width: 100%;
+	  height: 4rem;
+	  line-height: 4rem;
+	  border: none;
+	  font-size: inherit;
+	  font-family: inherit;
+	}
+	
+	&__input:focus {
+	  outline: none;
+	}
+	
+	&__input_big {
+	  height: 100%;
+	  line-height: 100%;
+	}
 }
