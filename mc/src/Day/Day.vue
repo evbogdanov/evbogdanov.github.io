@@ -3,17 +3,14 @@
 		.day__name
 			input.table__input.table__input_big(
 				type="text"
-				:value="name"
+				:value="day.name"
 				@input="updateName"
 			)
 		.day__records
 			app-record(
-				v-for="(record, i) in records"
-				v-on:recordChanged="updateRecord"
+				v-for="(record, i) in day.records"
 				:key="i"
-				:index="i"
-				:quantity="record.quantity"
-				:price="record.price"
+				:record="record"
 			)
 			.day__new-record
 				a.day__new-record-link(

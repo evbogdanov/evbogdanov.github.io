@@ -1,15 +1,22 @@
 export default {
   props: [
-    'index',
-    'price',
-    'quantity'
+    'record'
   ],
   methods: {
     quantityChanged(ev) {
-      this.$emit('recordChanged', this.index, this.price, ev.target.value)
+    	this.$store.commit({
+    		type: 'updateRecordQuantity',
+    		record: this.record,
+    		quantity: ev.target.value
+    	})
     },
+
     priceChanged(ev) {
-      this.$emit('recordChanged', this.index, ev.target.value, this.quantity)
+    	this.$store.commit({
+    		type: 'updateRecordPrice',
+    		record: this.record,
+    		price: ev.target.value
+    	})
     }
   }
 }

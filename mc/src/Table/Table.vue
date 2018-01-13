@@ -31,13 +31,8 @@
 			.table__days
 				app-day(
 					v-for="(day, i) in days"
-					v-on:recordAdded="addNewRecordForDay"
-					v-on:recordChanged="updateRecord"
-					v-on:dayNameChanged="updateDayName"
 					:key="i"
-					:index="i"
-					:name="day.name"
-					:records="day.records"
+					:day="day"
 					:daily-revenue="dailyRevenues[i]"
 				)
 				.table__new-day
