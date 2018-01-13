@@ -1,11 +1,31 @@
 <template lang="pug">
 	.table
 		.table__head
-			.table__column-name Day
-			.table__column-name Quantity
-			.table__column-name Price
-			.table__column-name Daily revenue
-			.table__column-name Total revenue
+			.table__column-name
+				app-trans(
+					en="Day"
+					ru="День"
+				)
+			.table__column-name
+				app-trans(
+					en="Quantity"
+					ru="Количество"
+				)
+			.table__column-name
+				app-trans(
+					en="Price"
+					ru="Цена"
+				)
+			.table__column-name
+				app-trans(
+					en="Daily revenue"
+					ru="Дневная выручка"
+				)
+			.table__column-name
+				app-trans(
+					en="Total revenue"
+					ru="Общая выручка"
+				)
 
 		.table__body
 			.table__days
@@ -24,7 +44,11 @@
 					a.table__new-day-link(
 						href="#"
 						@click="addNewDay"
-					) New day
+					)
+						app-trans(
+							en="New day"
+							ru="Новый день"
+						)
 			.table__total-revenue {{ totalRevenue.toFixed(2) }}
 </template>
 

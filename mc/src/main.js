@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import App from './App/App.vue'
-import Header from './Header/Header.vue'
-import Table from './Table/Table.vue'
+import Translation from './Translation/Translation.vue'
+import store from './store'
 
-Vue.component('app-header', Header)
-Vue.component('app-table', Table)
+Vue.component('app-trans', Translation)
 
 new Vue({
   el: '.app',
+  store,
   render: h => h(App)
 })
