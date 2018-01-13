@@ -24,9 +24,7 @@ export const mutations = {
   addNewDay(state) {
     addEmptyDay(state)
     const dayIndex = state.days.length - 1,
-      day = state.days[dayIndex]
-    addEmptyRecord(day)
-    addEmptyRecord(day)
+          day = state.days[dayIndex]
     addEmptyRecord(day)
   },
 
