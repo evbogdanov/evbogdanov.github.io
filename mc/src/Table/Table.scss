@@ -16,9 +16,13 @@
 	  display: flex;
 	  flex-direction: column;
 	  justify-content: center;
-	  font-size: 1.8rem;
+	  font-size: 1.4rem;
+
+	  @media (min-width: $width-for-bigger-fonts) {
+	    font-size: 1.8rem;
+	  }
 	}
-	
+
 	&__body {
 	  display: flex;
 	}
@@ -39,9 +43,11 @@
 		text-align: center;
 		padding: 4rem 0;
 	}
-	
+
 	&__new-day-link {
-		font-size: 1.8rem;
+		@media (min-width: $width-for-bigger-fonts) {
+			font-size: 1.8rem;
+		}
 	}
 
 	&__input {
