@@ -1,7 +1,7 @@
 <template lang="pug">
 	.day
 		.day__name
-			input.table__input.table__input_big(
+			input.input.input_big(
 				type="text"
 				:value="day.name"
 				@input="updateName"

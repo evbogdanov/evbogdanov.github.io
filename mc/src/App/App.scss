@@ -1,35 +1,5 @@
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 62.5%;
-  -webkit-text-size-adjust: 100%;
-}
-
-body {
-  font-family: 'Lora', serif;
-  font-size: 1.6rem;
-  color: $color-black;
-  background: $color-grey;
-}
-
-a {
-  display: inline-block;
-  text-decoration: none;
-  color: $color-blue;
-  border-bottom: .1rem solid rgba($color-blue, .25);
-  padding-bottom: .2rem;
-  transition: border-bottom-color .3s ease;
-}
-
-a:hover {
-  border-bottom-color: rgba($color-blue, .75);
-}
+@import "../scss/reset";
+@import "../scss/input";
 
 .app {
 	width: 100%;

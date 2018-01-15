@@ -1,13 +1,13 @@
 <template lang="pug">
 	.record
 		.record__quantity
-			input.table__input(
+			input.input(
 				type="text"
 				:value="record.quantity"
 				@input="quantityChanged"
 			)
 		.record__price
-			input.table__input(
+			input.input(
 				type="text"
 				:value="record.price"
 				@input="priceChanged"
