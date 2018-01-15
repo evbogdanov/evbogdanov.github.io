@@ -7,10 +7,14 @@
 
 	&__quantity,
 	&__price {
-	  flex: 0 0 50%;
-	}
-
-	&__quantity {
+	  flex: 0 0 30%;
 	  border-right: .1rem solid $color-grey-dark;
+	}
+	
+	&__revenue {
+		flex: 0 0 40%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 }

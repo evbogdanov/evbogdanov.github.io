@@ -1,3 +1,5 @@
+import { getRevenue } from '../util'
+
 export const getters = {
   isRussianLang(state) {
     return state.lang === 'ru'
@@ -14,9 +16,7 @@ export const getters = {
   dailyRevenues(state) {
     return state.days.map(day => {
       return day.records.reduce((revenue, record) => {
-        const price = parseFloat(record.price) || 0,
-          quantity = parseInt(record.quantity, 10) || 0
-        return revenue + price * quantity
+        return revenue + getRevenue(record.price, record.quantity)
       }, 0)
     })
   },

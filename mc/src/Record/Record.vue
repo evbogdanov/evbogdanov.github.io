@@ -12,6 +12,7 @@
 				:value="record.price"
 				@input="priceChanged"
 			)
+		.record__revenue {{ revenue.toFixed(2) }}
 </template>
 
 <script src="./Record.js"></script>
