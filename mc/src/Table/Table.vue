@@ -18,33 +18,38 @@
 				)
 			.table__column-name
 				app-trans(
-					en="Daily revenue"
-					ru="Дневная выручка"
+					en="Revenue"
+					ru="Выручка"
 				)
 			.table__column-name
 				app-trans(
-					en="Total revenue"
-					ru="Общая выручка"
+					en="Daily revenue"
+					ru="Дневная выручка"
 				)
 
 		.table__body
-			.table__days
-				app-day(
-					v-for="(day, i) in days"
-					:key="i"
-					:day="day"
-					:daily-revenue="dailyRevenues[i]"
+			app-day(
+				v-for="(day, i) in days"
+				:key="i"
+				:day="day"
+				:daily-revenue="dailyRevenues[i]"
+			)
+		.table__footer
+			.table__new-day
+				a.table__new-day-link(
+					href="#"
+					@click="addNewDay"
 				)
-				.table__new-day
-					a.table__new-day-link(
-						href="#"
-						@click="addNewDay"
+					app-trans(
+						en="New day"
+						ru="Новый день"
 					)
-						app-trans(
-							en="New day"
-							ru="Новый день"
-						)
-			.table__total-revenue {{ totalRevenue.toFixed(2) }}
+			.table__total-revenue
+				app-trans(
+					en="Total revenue:"
+					ru="Общая выручка:"
+				)
+				span.table__total-revenue-number {{ totalRevenue.toFixed(2) }}
 </template>
 
 <script src="./Table.js"></script>

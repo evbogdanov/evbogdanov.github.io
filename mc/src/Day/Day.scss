@@ -3,12 +3,12 @@
   border-bottom: .1rem solid $color-grey-dark;
   
 	&__name {
-	  flex: 0 0 25%;
+	  flex: 0 0 20%;
 	  border-right: .1rem solid $color-grey-dark;
 	}
 	
 	&__records {
-	  flex: 0 0 50%;
+	  flex: 0 0 60%;
 	  border-right: .1rem solid $color-grey-dark;
 	}
 	
@@ -23,7 +23,7 @@
 	}
 	
 	&__revenue {
-	  flex: 0 0 25%;
+	  flex: 0 0 20%;
 	  display: flex;
 	  justify-content: center;
 	  align-items: center;

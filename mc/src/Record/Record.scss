@@ -6,13 +6,14 @@
 	}
 
 	&__quantity,
-	&__price {
-	  flex: 0 0 30%;
+	&__price,
+	&__revenue {
+	  flex: 0 0 33.3333%;
 	  border-right: .1rem solid $color-grey-dark;
 	}
 	
 	&__revenue {
-		flex: 0 0 40%;
+		border-right: none;
 		display: flex;
 		align-items: center;
 		justify-content: center;

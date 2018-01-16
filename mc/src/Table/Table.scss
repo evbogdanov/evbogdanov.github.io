@@ -23,30 +23,28 @@
 	  }
 	}
 
-	&__body {
-	  display: flex;
-	}
-	
-	&__days {
-	  flex: 0 0 80%;
-	  border-right: .1rem solid $color-grey-dark;
-	}
-	
-	&__total-revenue {
-	  flex: 0 0 20%;
-	  display: flex;
-	  justify-content: center;
-	  align-items: center;
-	}
-	
-	&__new-day {
-		text-align: center;
-		padding: 4rem 0;
-	}
-
-	&__new-day-link {
+	&__footer {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		
 		@media (min-width: $width-for-bigger-fonts) {
 			font-size: 1.8rem;
 		}
+	}
+
+	&__new-day {
+		padding: 4rem 0 4rem 2rem;
+	}
+
+	&__total-revenue {
+		padding-right: 2rem;
+	}
+
+	&__total-revenue-number {
+		padding: .75rem;
+		background: $color-grey;
+		margin-left: .5rem;
+		border-radius: .5rem;
 	}
 }
