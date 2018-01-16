@@ -42,5 +42,9 @@ export const mutations = {
 
   updateRecordPrice(state, {record, price}) {
     record.price = price
-  }
+  },
+
+	clearDays(state) {
+		state.days = []
+	}		
 }

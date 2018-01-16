@@ -8,6 +8,7 @@ export default {
 
   computed: mapGetters([
     'days',
+    'hasDays',
     'dailyRevenues',
     'totalRevenue'
   ]),
@@ -16,6 +17,11 @@ export default {
     addNewDay(ev) {
       ev.preventDefault()
       this.$store.commit('addNewDay')
-    }
+    },
+
+	clearDays(ev) {
+		ev.preventDefault()
+		this.$store.commit('clearDays')
+	}
   }
 }

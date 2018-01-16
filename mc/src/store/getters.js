@@ -13,6 +13,10 @@ export const getters = {
     return state.days
   },
 
+	hasDays(state) {
+		return state.days.length > 0
+	},
+
   dailyRevenues(state) {
     return state.days.map(day => {
       return day.records.reduce((revenue, record) => {

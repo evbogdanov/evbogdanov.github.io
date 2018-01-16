@@ -1,5 +1,7 @@
 <template lang="pug">
-	.table
+	.table(
+		:class="{'table_has-days': hasDays}"
+	)
 		.table__head
 			.table__column-name
 				app-trans(
@@ -46,10 +48,20 @@
 					)
 			.table__total-revenue
 				app-trans(
-					en="Total revenue:"
-					ru="Общая выручка:"
+					en="Total:"
+					ru="Итого:"
 				)
 				span.table__total-revenue-number {{ totalRevenue.toFixed(2) }}
+			.table__clear-days
+				a.table__clear-days-link(
+					href="#"
+					@click="clearDays"
+				)
+					app-trans(
+						en="Clear"
+						ru="Сброс"
+					)
+
 </template>
 
 <script src="./Table.js"></script>

@@ -24,6 +24,7 @@
 	}
 
 	&__footer {
+		padding: 0 2rem;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -34,11 +35,23 @@
 	}
 
 	&__new-day {
-		padding: 4rem 0 4rem 2rem;
+		padding: 4rem 0;
+		flex: 0 0 100%;
+		text-align: center;
+	}
+
+	&_has-days &__new-day {
+		flex-basis: auto;
 	}
 
 	&__total-revenue {
-		padding-right: 2rem;
+		position: relative;
+		top: -.2rem;
+		display: none;
+	}
+
+	&_has-days &__total-revenue {
+		display: block;
 	}
 
 	&__total-revenue-number {
@@ -46,5 +59,23 @@
 		background: $color-grey;
 		margin-left: .5rem;
 		border-radius: .5rem;
+	}
+
+	&__clear-days {
+		padding: 4rem 0;
+		display: none;
+	}
+	
+	&_has-days &__clear-days {
+		display: block;
+	}
+
+	&__clear-days-link {
+		color: $color-red;
+		border-bottom-color: rgba($color-red, .25);
+
+		&:hover {
+			border-bottom-color: rgba($color-red, .75);
+		}
 	}
 }

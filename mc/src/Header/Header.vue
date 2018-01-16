@@ -2,14 +2,14 @@
 	header.header
 		ul.header__languages
 			li.header__language(
-				v-bind:class="{header__language_active: isEnglishLang}"
+				:class="{header__language_active: isEnglishLang}"
 			)
 				a.header__link(
 					href="#"
 					@click="switchLangToEnglish"
 				) English
 			li.header__language(
-				v-bind:class="{header__language_active: isRussianLang}"
+				:class="{header__language_active: isRussianLang}"
 			)
 				a.header__link(
 					href="#"
