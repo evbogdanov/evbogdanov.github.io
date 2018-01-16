@@ -21,12 +21,12 @@
 			.table__column-name
 				app-trans(
 					en="Revenue"
-					ru="Выручка"
+					ru="Доход"
 				)
 			.table__column-name
 				app-trans(
 					en="Daily revenue"
-					ru="Дневная выручка"
+					ru="Дневной доход"
 				)
 
 		.table__body
