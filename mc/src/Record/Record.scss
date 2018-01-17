@@ -1,17 +1,17 @@
 .record {
-  display: flex;
+	display: flex;
 
 	&:not(:last-child) {
-	  border-bottom: .1rem solid $color-grey-dark;
+		border-bottom: 0.1rem solid $color-grey-dark;
 	}
 
 	&__quantity,
 	&__price,
 	&__revenue {
-	  flex: 0 0 33.3333%;
-	  border-right: .1rem solid $color-grey-dark;
+		flex: 0 0 33.3333%;
+		border-right: 0.1rem solid $color-grey-dark;
 	}
-	
+
 	&__revenue {
 		border-right: none;
 		display: flex;

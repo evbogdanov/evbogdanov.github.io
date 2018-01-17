@@ -7,12 +7,12 @@
 	font-size: inherit;
 	font-family: inherit;
 
-  &:focus {
-    outline: none;
-  }
+	&:focus {
+		outline: none;
+	}
 
-  &_big {
-    height: 100%;
-    line-height: 100%;
-  }
+	&_big {
+		height: 100%;
+		line-height: 100%;
+	}
 }

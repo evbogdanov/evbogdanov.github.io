@@ -1,34 +1,33 @@
 import { getRevenue } from '../util'
 
 export const getters = {
-  isRussianLang(state) {
-    return state.lang === 'ru'
-  },
+	isRussianLang(state) {
+		return state.lang === 'ru'
+	},
 
-  isEnglishLang(state) {
-    return state.lang === 'en'
-  },
+	isEnglishLang(state) {
+		return state.lang === 'en'
+	},
 
-  days(state) {
-    return state.days
-  },
+	days(state) {
+		return state.days
+	},
 
 	hasDays(state) {
 		return state.days.length > 0
 	},
 
-  dailyRevenues(state) {
-    return state.days.map(day => {
-      return day.records.reduce((revenue, record) => {
-        return revenue + getRevenue(record.price, record.quantity)
-      }, 0)
-    })
-  },
+	dailyRevenues(state) {
+		return state.days.map(day => {
+			return day.records.reduce((revenue, record) => {
+				return revenue + getRevenue(record.price, record.quantity)
+			}, 0)
+		})
+	},
 
-  totalRevenue(state, getters) {
-    return getters.dailyRevenues.reduce((total, daily) => {
-      return total + daily
-    }, 0)
-  }
-
+	totalRevenue(state, getters) {
+		return getters.dailyRevenues.reduce((total, daily) => {
+			return total + daily
+		}, 0)
+	}
 }

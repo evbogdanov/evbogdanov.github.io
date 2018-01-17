@@ -7,7 +7,9 @@
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --hot",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "pretty-js": "find ./src -type f -name '*.js' -exec prettier --write {} \\;",
+    "pretty-scss": "find ./src -type f -name '*.scss' -exec prettier --write {} \\;"
   },
   "dependencies": {
     "vue": "^2.5.11",

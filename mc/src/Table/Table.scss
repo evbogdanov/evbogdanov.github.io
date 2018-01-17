@@ -1,26 +1,26 @@
 .table {
 	width: 100%;
-	border-top: .1rem solid $color-grey-dark;
-	border-bottom: .1rem solid $color-grey-dark;
-  
-	&__head {
-	  display: flex;
-	  border-bottom: .1rem solid $color-grey-dark;
-	  background: $color-grey;
-	}
-	
-	&__column-name {
-	  text-align: center;
-	  padding: 1.5rem 0;
-	  flex: 0 0 20%;
-	  display: flex;
-	  flex-direction: column;
-	  justify-content: center;
-	  font-size: 1.4rem;
+	border-top: 0.1rem solid $color-grey-dark;
+	border-bottom: 0.1rem solid $color-grey-dark;
 
-	  @media (min-width: $width-for-bigger-fonts) {
-	    font-size: 1.8rem;
-	  }
+	&__head {
+		display: flex;
+		border-bottom: 0.1rem solid $color-grey-dark;
+		background: $color-grey;
+	}
+
+	&__column-name {
+		text-align: center;
+		padding: 1.5rem 0;
+		flex: 0 0 20%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		font-size: 1.4rem;
+
+		@media (min-width: $width-for-bigger-fonts) {
+			font-size: 1.8rem;
+		}
 	}
 
 	&__footer {
@@ -28,7 +28,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		
+
 		@media (min-width: $width-for-bigger-fonts) {
 			font-size: 1.8rem;
 		}
@@ -46,7 +46,7 @@
 
 	&__total-revenue {
 		position: relative;
-		top: -.2rem;
+		top: -0.2rem;
 		display: none;
 	}
 
@@ -55,27 +55,27 @@
 	}
 
 	&__total-revenue-number {
-		padding: .75rem;
+		padding: 0.75rem;
 		background: $color-grey;
-		margin-left: .5rem;
-		border-radius: .5rem;
+		margin-left: 0.5rem;
+		border-radius: 0.5rem;
 	}
 
 	&__clear-days {
 		padding: 4rem 0;
 		display: none;
 	}
-	
+
 	&_has-days &__clear-days {
 		display: block;
 	}
 
 	&__clear-days-link {
 		color: $color-red;
-		border-bottom-color: rgba($color-red, .25);
+		border-bottom-color: rgba($color-red, 0.25);
 
 		&:hover {
-			border-bottom-color: rgba($color-red, .75);
+			border-bottom-color: rgba($color-red, 0.75);
 		}
 	}
 }

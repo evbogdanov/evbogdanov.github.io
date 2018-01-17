@@ -1,31 +1,31 @@
 .day {
-  display: flex;
-  border-bottom: .1rem solid $color-grey-dark;
-  
+	display: flex;
+	border-bottom: 0.1rem solid $color-grey-dark;
+
 	&__name {
-	  flex: 0 0 20%;
-	  border-right: .1rem solid $color-grey-dark;
+		flex: 0 0 20%;
+		border-right: 0.1rem solid $color-grey-dark;
 	}
-	
+
 	&__records {
-	  flex: 0 0 60%;
-	  border-right: .1rem solid $color-grey-dark;
+		flex: 0 0 60%;
+		border-right: 0.1rem solid $color-grey-dark;
 	}
-	
+
 	&__new-record {
 		text-align: center;
 	}
-	
+
 	&__new-record-link {
-	  padding: .5rem 0;
-	  border-bottom: none;
-	  font-size: 3rem;
+		padding: 0.5rem 0;
+		border-bottom: none;
+		font-size: 3rem;
 	}
-	
+
 	&__revenue {
-	  flex: 0 0 20%;
-	  display: flex;
-	  justify-content: center;
-	  align-items: center;
+		flex: 0 0 20%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 }
