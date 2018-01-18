@@ -46,5 +46,21 @@ export const mutations = {
 
 	clearDays(state) {
 		state.days = []
+	},
+
+	deleteDay(state, day) {
+		state.days = state.days.filter(d => d !== day)
+	},
+
+	deleteRecord(state, record) {
+		for (let day of state.days) {
+			for (let rec of day.records) {
+				if (rec === record) {
+					const i = day.records.indexOf(rec)
+					day.records.splice(i, 1)
+					return
+				}
+			}
+		}
 	}
 }

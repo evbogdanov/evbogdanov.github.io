@@ -24,6 +24,11 @@ export default {
 				record: this.record,
 				price: ev.target.value
 			})
+		},
+
+		deleteRecord(ev) {
+			ev.preventDefault()
+			this.$store.commit('deleteRecord', this.record)
 		}
 	}
 }

@@ -18,4 +18,11 @@
 		align-items: center;
 		justify-content: center;
 	}
+
+	&__delete-link {
+		font-size: 3rem;
+		border-bottom: none;
+		transform: rotate(45deg);
+		color: $color-red;
+	}
 }

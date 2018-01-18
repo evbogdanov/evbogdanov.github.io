@@ -17,7 +17,13 @@
 					href="#"
 					@click="addNewRecord"
 				) +
-		.day__revenue {{ dailyRevenue.toFixed(2) }}
+		.day__revenue
+			a.day__delete-link(
+				v-if="!day.records.length"
+				href="#"
+				@click="deleteDay"
+			) +
+			span(v-else) {{ dailyRevenue.toFixed(2) }}
 </template>
 
 <script src="./Day.js"></script>

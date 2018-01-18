@@ -19,6 +19,10 @@ export default {
 				day: this.day,
 				name: ev.target.value
 			})
+		},
+		deleteDay(ev) {
+			ev.preventDefault()
+			this.$store.commit('deleteDay', this.day)
 		}
 	}
 }
