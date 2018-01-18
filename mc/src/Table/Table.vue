@@ -55,13 +55,37 @@
 			.table__clear-days
 				a.table__clear-days-link(
 					href="#"
-					@click="clearDays"
+					@click="showModal"
 				)
 					app-trans(
 						en="Clear"
 						ru="Сброс"
 					)
-
+		.table__modal(
+			v-if="modalShown"
+		)
+			.table__modal-box
+				.table__modal-heading
+					app-trans(
+						en="Clear?"
+						ru="Сбросить?"
+					)
+				a.table__modal-action(
+					href="#"
+					@click="hideModalAndClearDays"
+				)
+					app-trans(
+						en="Yes"
+						ru="Да"
+					)
+				a.table__modal-action(
+					href="#"
+					@click="hideModal"
+				)
+					app-trans(
+						en="No"
+						ru="Нет"
+					)
 </template>
 
 <script src="./Table.js"></script>

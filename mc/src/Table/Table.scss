@@ -78,4 +78,27 @@
 			border-bottom-color: rgba($color-red, 0.75);
 		}
 	}
+
+	&__modal {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		background: rgba(white, 0.9);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 4.8rem;
+	}
+
+	&__modal-box {
+		margin: auto;
+		text-align: center;
+	}
+
+	&__modal-action {
+		margin: 1rem 1.5rem;
+		font-size: 3rem;
+	}
 }

@@ -6,6 +6,12 @@ export default {
 		'app-day': Day
 	},
 
+	data() {
+		return {
+			modalShown: false
+		}
+	},
+
 	computed: mapGetters(['days', 'hasDays', 'dailyRevenues', 'totalRevenue']),
 
 	methods: {
@@ -14,9 +20,20 @@ export default {
 			this.$store.commit('addNewDay')
 		},
 
-		clearDays(ev) {
+		showModal(ev) {
+			ev.preventDefault()
+			this.modalShown = true
+		},
+
+		hideModal(ev) {
+			ev.preventDefault()
+			this.modalShown = false
+		},
+
+		hideModalAndClearDays(ev) {
 			ev.preventDefault()
 			this.$store.commit('clearDays')
+			this.modalShown = false
 		}
 	}
 }
