@@ -2,15 +2,22 @@ const URL_SHORTCUTS = 'shortcuts.json',
 	KEY_ENTER = 13,
 	REPLACE = '{{s}}'
 
-function handleKey(key, shortcuts, elLink, elSearch, elDismiss) {
-	const isEnter = key === KEY_ENTER,
-		searchText = elSearch.value,
-		words = searchText.split(' ')
+let EL_LINK = null,
+	EL_SEARCH = null,
+	EL_DISMISS = null
+
+function handleKey(key) {
+	if (key !== KEY_ENTER) return
+
+	const link = EL_LINK.innerText
+	if (link) window.open(link)
+}
+
+function handleInput(input, shortcuts) {
+	EL_DISMISS.style.display = input ? 'block' : 'none'
+
+	const words = input.split(' ')
 	let link = ''
-
-	if (searchText) elDismiss.style.display = 'block'
-	else elDismiss.style.display = 'none'
-
 	if (words.length >= 2) {
 		const shortcut = words[0]
 		words.shift()
@@ -19,27 +26,33 @@ function handleKey(key, shortcuts, elLink, elSearch, elDismiss) {
 			link = shortcuts[shortcut].replace(REPLACE, searchQuery)
 		}
 	}
-	elLink.innerText = link
-	elLink.href = link
-	if (isEnter && link) window.open(link)
+
+	EL_LINK.innerText = link
+	EL_LINK.href = link
+}
+
+function handleDismiss() {
+	EL_SEARCH.value = ''
+	EL_LINK.innerText = ''
+	EL_DISMISS.style.display = 'none'
+	EL_SEARCH.focus()
 }
 
 function processShortcuts(shortcuts) {
-	const elLink = document.getElementById('link-in'),
-		elSearch = document.getElementById('search'),
-		elDismiss = document.getElementById('dismiss')
-	elSearch.addEventListener('keyup', function(ev) {
-		handleKey(ev.which, shortcuts, elLink, elSearch, elDismiss)
+	EL_SEARCH.addEventListener('keyup', function(ev) {
+		handleKey(ev.which)
 	})
-	elDismiss.addEventListener('click', function() {
-		elSearch.value = ''
-		elLink.innerText = ''
-		elDismiss.style.display = 'none'
-		elSearch.focus()
+	EL_SEARCH.addEventListener('input', function(ev) {
+		handleInput(ev.target.value, shortcuts)
 	})
+	EL_DISMISS.addEventListener('click', handleDismiss)
 }
 
 function main() {
+	EL_LINK = document.getElementById('link-in')
+	EL_SEARCH = document.getElementById('search')
+	EL_DISMISS = document.getElementById('dismiss')
+
 	fetch(URL_SHORTCUTS)
 		.then(response => response.json())
 		.then(shortcuts => processShortcuts(shortcuts))
