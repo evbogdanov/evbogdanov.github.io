@@ -18,6 +18,10 @@
   "ef": "http://translate.google.com/#en/fr/{{s}}",
   "fe": "http://translate.google.com/#fr/en/{{s}}",
 
+  "f": "https://www.collinsdictionary.com/dictionary/french-english/{{s}}",
+  "fw": "https://fr.wiktionary.org/w/index.php?search={{s}}",
+  "fwp": "https://fr.wikipedia.org/w/index.php?search={{s}}",
+
   "w": "https://en.wiktionary.org/w/index.php?search={{s}}",
   "в": "https://ru.wiktionary.org/w/index.php?search={{s}}",
 
